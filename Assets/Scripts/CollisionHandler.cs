@@ -5,38 +5,80 @@ using UnityEngine;
 public class CollisionHandler : MonoBehaviour
 {
 
-    private TextMeshProUGUI debugText, numberText;
+    private TextMeshProUGUI debugText;
     private int numberOfCollidingFingers;
+
+    public TextMeshProUGUI firstNumberText, secondNumberText;
+
+    private int firstNumber, secondNumber;
+    
+    private bool isColliding = false;
+    private float collisionStartTime = 0f;
+
+    public GameObject tile; //TODO spawn the tile
+    
+    //TODO implement number selection (watch hierarchy UI)
+    
     // Start is called before the first frame update
     void Start()
     {
         debugText = GameObject.FindGameObjectWithTag("debug").GetComponent<TextMeshProUGUI>();
-        numberText = GameObject.FindGameObjectWithTag("number").GetComponent<TextMeshProUGUI>();
+        
         debugText.text = "Start";
     }
     
-    private void Update()
+    /*private void Update()
     {
-        UpdateNumberOfCollidingFingers();
-    }
+        if (numberOfCollidingFingers != 0)
+        {
+            UpdateNumberOfCollidingFingers();
+        }
+    }*/
     
-    private void UpdateNumberOfCollidingFingers()
+    /*private void UpdateNumberOfCollidingFingers()
     {
-        numberText.text = "" + numberOfCollidingFingers;
-    }
+        if (firstNumber == 0)
+        {
+            firstNumberText.text = "" + numberOfCollidingFingers;
+            firstNumber = numberOfCollidingFingers;
+        }
+        else
+        {
+            firstNumber = secondNumber;
+            secondNumber = numberOfCollidingFingers;
+            firstNumberText.text = "" + firstNumber;
+            secondNumberText.text = "" + secondNumber;
+        }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
         if (IsFinger(collision.gameObject))
         {
+            isColliding = true;
             numberOfCollidingFingers++;
         }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        //if the collision stay happens for at least 1.5 seconds
+        if (isColliding)
+        {
+            // Check if collision has been continuously happening for at least 1.5 seconds
+            if (Time.time - collisionStartTime >= 1.5f)
+            {
+                tile.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "" + numberOfCollidingFingers;
+            }
+        }
+
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (IsFinger(collision.gameObject))
         {
+            isColliding = false;
             numberOfCollidingFingers--;
             if (numberOfCollidingFingers < 0)
             {
@@ -51,31 +93,5 @@ public class CollisionHandler : MonoBehaviour
         return obj.CompareTag("finger");
     }
 
-   /* private void OnCollisionEnter(Collision other)
-    {
-        //Debug all the information about the collision
-        Debug.Log("collision with " + other.gameObject.name + " at " + other.contacts[0].point);
-        debugText.text = other.gameObject.name + " collided with " + gameObject.name + " at " + other.contacts[0].point;
-    }
-    
-    //We update the number with the number of contacts
-    private void OnCollisionStay(Collision collision)
-    {
-        numberOfCollidingFingers = 0; // Azzera il conteggio delle dita in collisione ad ogni frame
-
-        // Itera su tutte le collisioni presenti nell'oggetto 'collision'
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            // Controlla se l'oggetto in collisione ha un tag che identifica le dita (ad esempio 'Finger')
-            if (contact.otherCollider.CompareTag("finger"))
-            {
-                // Incrementa il conteggio delle dita in collisione
-                numberOfCollidingFingers++;
-            }
-        }
-
-        // Aggiorna il testo per mostrare il numero di dita in collisione con il tavolo
-        numberText.text = "" + numberOfCollidingFingers;
-
-    }*/
+   
 }
