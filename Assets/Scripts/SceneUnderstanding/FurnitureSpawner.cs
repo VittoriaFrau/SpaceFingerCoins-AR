@@ -45,6 +45,8 @@ public class FurnitureSpawner : MonoBehaviour
 
         var dimensions = volume ? volume.Dimensions : Vector3.one;
 
+        
+        
         /*if (_classification && plane)
         {
             dimensions = plane.Dimensions;

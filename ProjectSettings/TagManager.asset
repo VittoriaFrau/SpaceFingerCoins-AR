@@ -8,6 +8,11 @@ TagManager:
   - debug
   - finger
   - NumberTile
+  - RoomLight
+  - FloatingTile
+  - SymbolTile
+  - Desk
+  - FingerNumber
   layers:
   - Default
   - TransparentFX

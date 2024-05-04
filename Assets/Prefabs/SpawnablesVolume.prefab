@@ -60,6 +60,9 @@ MonoBehaviour:
   RoomLightPrefab: {fileID: 4058753717224557943, guid: 683c7c9a181c54d32a8644cb51a766af, type: 3}
   FallbackPrefab: {fileID: 0}
   SpawnablePrefabs:
-  - ResizablePrefab: {fileID: 0}
+  - ResizablePrefab: {fileID: 7329915652745048277, guid: 477ff0d285fea4b6294f2e71495d3cab, type: 3}
     ClassificationLabel: DESK
     _editorClassificationIndex: 3
+  - ResizablePrefab: {fileID: 7329915652745048277, guid: 477ff0d285fea4b6294f2e71495d3cab, type: 3}
+    ClassificationLabel: TABLE
+    _editorClassificationIndex: 13
