@@ -5,21 +5,22 @@ using UnityEngine;
 
 public class FingersManager : MonoBehaviour
 {
-    private List<GameObject> fingerNumbers;
-    private bool showFingerNumbersLeft = false;
-    private bool showFingerNumbersRight = false;
-    private bool showFingerNumbers = false;
-    public List<GameObject> fingerNumbersLeft;
-    public List<GameObject> fingerNumbersRight;
+    private List<GameObject> fingerNumbers = new();
+    //I use those variables to check if the finger numbers are already shown
+    private bool showFingerNumbersLeft;
+    private bool showFingerNumbersRight;
+    public List<GameObject> fingerNumbersLeft = new ();
+    public List<GameObject> fingerNumbersRight = new();
     
     // Start is called before the first frame update
     void Start()
     {
-        HideAllFingerNumbers();
         if(fingerNumbersLeft.Count == 0 || fingerNumbersRight.Count == 0)
             FindFingerNumbers();
         // Finger numbers are divided into left and right hand
         fingerNumbers = fingerNumbersLeft.Concat(fingerNumbersRight).ToList();
+        HideAllFingerNumbers();
+
     }
     
     private void FindFingerNumbers()
@@ -52,25 +53,18 @@ public class FingersManager : MonoBehaviour
 
     private void ShowAllFingerNumbers()
     {
-        if(!showFingerNumbers)
+        foreach (var fingerNumber in fingerNumbers)
         {
-            foreach (var fingerNumber in fingerNumbers)
-            {
-                fingerNumber.SetActive(true);
-            }
-            showFingerNumbers = true;
+            fingerNumber.SetActive(true);
         }
+    
     }
     
     public void HideAllFingerNumbers()
-    {
-        if(showFingerNumbers)
+    { 
+        foreach (var fingerNumber in fingerNumbers)
         {
-            foreach (var fingerNumber in fingerNumbers)
-            {
-                fingerNumber.SetActive(false);
-            }
-            showFingerNumbers = false;
+            fingerNumber.SetActive(false);
         }
     }
     
