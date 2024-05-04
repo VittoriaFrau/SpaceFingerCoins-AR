@@ -88,4 +88,16 @@ public class FingersManager : MonoBehaviour
             finger.SetActive(false);
         }
     }
+    
+    public void CreateCopyOfObject(GameObject obj)
+    {
+        GameObject newObj = Instantiate(obj);
+        newObj.transform.SetParent(obj.transform.parent);
+        newObj.transform.SetLocalPositionAndRotation(obj.transform.localPosition, obj.transform.localRotation);
+        newObj.transform.localScale = obj.transform.localScale;
+        newObj.name = obj.name + "Copy";
+        obj.transform.SetParent(null);
+    }
+    
+    
 }
