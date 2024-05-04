@@ -15,6 +15,7 @@ public class TileCollisions : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("OnCollisionEnter, tag: " + collision.gameObject.tag);
         if (collision.gameObject.CompareTag("NumberTile"))
         {
             Debug.Log("Collision with tile");
