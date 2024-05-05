@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Oculus.Interaction;
+using UI;
 using UnityEngine;
 
 public class FingersManager : MonoBehaviour
@@ -12,6 +15,10 @@ public class FingersManager : MonoBehaviour
     public List<GameObject> fingerNumbersLeft = new ();
     public List<GameObject> fingerNumbersRight = new();
     
+    private Dictionary<int, Vector3> fingerNumbersLocalPositions = new();
+    private Dictionary<int, Vector3> fingerNUmbersLocalRotations = new();
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,26 @@ public class FingersManager : MonoBehaviour
         fingerNumbers = fingerNumbersLeft.Concat(fingerNumbersRight).ToList();
         HideAllFingerNumbers();
 
+        //Check if the finger lists are complete
+        if (fingerNumbers.Count != 10)
+            Debug.LogError("Finger numbers are not complete");
+        if(fingerNumbersLeft.Count != 5)
+            Debug.LogError("Finger numbers left are not complete");
+        if(fingerNumbersRight.Count != 5)
+            Debug.LogError("Finger numbers right are not complete");
+        
+        //Save the initial position of the finger numbers
+        SaveInitialData();
+    }
+    
+    private void SaveInitialData()
+    {
+        for (int i = 0; i < fingerNumbers.Count; i++)
+        {
+            fingerNumbersLocalPositions.Add(i, fingerNumbers[i].transform.localPosition);
+            fingerNUmbersLocalRotations.Add(i, fingerNumbers[i].transform.localEulerAngles);
+        }
+       
     }
     
     private void FindFingerNumbers()
@@ -91,13 +118,61 @@ public class FingersManager : MonoBehaviour
     
     public void CreateCopyOfObject(GameObject obj)
     {
+        //Vector3 initialPosition = obj.transform.position;
         GameObject newObj = Instantiate(obj);
-        newObj.transform.SetParent(obj.transform.parent);
-        newObj.transform.SetLocalPositionAndRotation(obj.transform.localPosition, obj.transform.localRotation);
+        //block the grabbable to avoid the object to be grabbed immediately
+        obj.GetComponent<Grabbable>().enabled = false;
+        newObj.transform.SetPositionAndRotation(obj.transform.position, obj.transform.rotation);
         newObj.transform.localScale = obj.transform.localScale;
         newObj.name = obj.name + "Copy";
-        obj.transform.SetParent(null);
+        Destroy(newObj.GetComponent<InteractableUnityEventWrapper>());
+        newObj.transform.parent = null;
+
+        
+        Vector3 localPosition = GetPositionFromFingerNumber(obj);
+        Vector3 localRotation = GetRotationFromFingerNumber(obj);
+        
+        //TODO capire quale di questi due per togliere la velocita funziona
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        obj.transform.localPosition = localPosition;
+        obj.transform.localEulerAngles = localRotation;
+        
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        
+        obj.GetComponent<Grabbable>().enabled = true;
     }
+    
+    private IEnumerator EnableGrabbable(GameObject obj)
+    {
+        yield return new WaitForSeconds(1);
+        obj.GetComponent<Grabbable>().enabled = true;
+    }
+
+    private Vector3 GetPositionFromFingerNumber(GameObject finger)
+    {
+        //Find the index of the finger number
+        int index = fingerNumbers.IndexOf(finger);
+        //Get the position of the finger number
+        return fingerNumbersLocalPositions[index];
+    }
+    
+    private Vector3 GetRotationFromFingerNumber(GameObject finger)
+    {
+        //Find the index of the finger number
+        int index = fingerNumbers.IndexOf(finger);
+        //Get the position of the finger number
+        return fingerNUmbersLocalRotations[index];
+    }
+
     
     
 }

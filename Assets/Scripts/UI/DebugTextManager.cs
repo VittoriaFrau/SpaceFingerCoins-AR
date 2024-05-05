@@ -38,6 +38,13 @@ namespace UI
             //add a new line to the debug text
             debugText.text +=  "\n"+ text;
         }
+
+        public void AddDebugText(string text)
+        {
+            if (!debugText.gameObject.activeSelf) return;
+            //add a new line to the debug text
+            debugText.text +=  "\n"+ text;
+        }
     }
 
 }
