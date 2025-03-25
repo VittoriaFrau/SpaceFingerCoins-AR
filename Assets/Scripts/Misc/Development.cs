@@ -16,9 +16,9 @@ public class Development : MonoBehaviour
     void Awake()
     {
         DisableSceneManager();
-        DisablePassthroughCamera();
+        //DisablePassthroughCamera();
         SpawnTableToScene();
-        ShowDebugUI();
+        //ShowDebugUI();
     }
     
     private void DisableSceneManager()

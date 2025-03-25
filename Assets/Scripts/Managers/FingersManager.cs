@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Oculus.Interaction;
+using TMPro;
 using UI;
 using UnityEngine;
 
@@ -17,27 +18,40 @@ public class FingersManager : MonoBehaviour
     
     private Dictionary<int, Vector3> fingerNumbersLocalPositions = new();
     private Dictionary<int, Vector3> fingerNUmbersLocalRotations = new();
-    
+
+    public GameObject applePrefab;
+    public Transform tableTransform;
+    public TextMeshProUGUI canvasText;
+    public GameObject environmentParent;
+    private Dictionary<int, Vector3> appleSpawningPositions = new();
+
+    private int applesInTheScene = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        if(fingerNumbersLeft.Count == 0 || fingerNumbersRight.Count == 0)
+        if(fingerNumbersLeft.Count == 0) //|| fingerNumbersRight.Count == 0)
             FindFingerNumbers();
         // Finger numbers are divided into left and right hand
         fingerNumbers = fingerNumbersLeft.Concat(fingerNumbersRight).ToList();
         HideAllFingerNumbers();
 
         //Check if the finger lists are complete
-        if (fingerNumbers.Count != 10)
-            Debug.LogError("Finger numbers are not complete");
+       // if (fingerNumbers.Count != 10)
+        //    Debug.LogError("Finger numbers are not complete");
         if(fingerNumbersLeft.Count != 5)
             Debug.LogError("Finger numbers left are not complete");
-        if(fingerNumbersRight.Count != 5)
-            Debug.LogError("Finger numbers right are not complete");
+        //if(fingerNumbersRight.Count != 5)
+         //   Debug.LogError("Finger numbers right are not complete");
         
         //Save the initial position of the finger numbers
         SaveInitialData();
+        
+        appleSpawningPositions.Add(1, new Vector3(-0.547999978f,0.777999997f,0.465999991f));
+        appleSpawningPositions.Add(2, new Vector3(-0.268000007f,0.777999997f,0.230000004f));
+        appleSpawningPositions.Add(3, new Vector3(0.0560000017f,0.777999997f,0.536000013f));
+        appleSpawningPositions.Add(4, new Vector3(0.228f,0.777999997f,0.236000001f));
+        appleSpawningPositions.Add(5, new Vector3(0.532000005f,0.777999997f,0.528999984f));
     }
     
     private void SaveInitialData()
@@ -123,7 +137,7 @@ public class FingersManager : MonoBehaviour
         //block the grabbable to avoid the object to be grabbed immediately
         obj.GetComponent<Grabbable>().enabled = false;
         newObj.transform.SetPositionAndRotation(obj.transform.position, obj.transform.rotation);
-        newObj.transform.localScale = obj.transform.localScale;
+        newObj.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
         newObj.name = obj.name + "Copy";
         Destroy(newObj.GetComponent<InteractableUnityEventWrapper>());
         newObj.transform.parent = null;
@@ -149,6 +163,27 @@ public class FingersManager : MonoBehaviour
         }
         
         obj.GetComponent<Grabbable>().enabled = true;
+    }
+
+    public void SpawnApples(int digitNumber)
+    {
+        if(applesInTheScene != 0)
+        {
+            foreach (Transform child in environmentParent.transform)
+            {
+                if(child.gameObject.name.Contains("Apple"))
+                    Destroy(child.gameObject);
+            }
+        }
+        applesInTheScene = digitNumber;
+        for (int i = 0; i < digitNumber; i++)
+        {
+            // Calcola la posizione con un offset per non sovrapporre le mele
+            GameObject apple = Instantiate(applePrefab, environmentParent.transform);
+            apple.transform.localPosition = appleSpawningPositions[i+1];
+            apple.gameObject.SetActive(true);
+        }
+        canvasText.text = "Number: " + applesInTheScene;
     }
     
     private IEnumerator EnableGrabbable(GameObject obj)
