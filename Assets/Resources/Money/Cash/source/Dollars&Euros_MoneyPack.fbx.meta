@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: a540f64d4483796458d29b37f86021ed
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 100DBack_Mat
+    second: {fileID: 2100000, guid: aa0843c633700004e949eff652669bec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 100DFront_Mat
+    second: {fileID: 2100000, guid: e872db559fad0e142a9e777cc628a538, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 100E_Back_Mat
+    second: {fileID: 2100000, guid: e083042941ceec24791d16588bee16ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 100E_Front_Mat
+    second: {fileID: 2100000, guid: 37b290f10c094cf41ae8b0d6040290a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10DBack_Mat
+    second: {fileID: 2100000, guid: 5518307b65855b84f8661941adb91cfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10DFront_Mat
+    second: {fileID: 2100000, guid: 7be02728346ef2b45aeb8f83ca493469, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10E_Back_Mat
+    second: {fileID: 2100000, guid: e128a114b1dc75f41ba3efc84633c995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10E_Front_Mat
+    second: {fileID: 2100000, guid: f12d31d85374a304db3a2672dd013073, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1DBack_Mat
+    second: {fileID: 2100000, guid: bd29d5d4a8ff1554a8313b19eff891d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1DFront_Mat
+    second: {fileID: 2100000, guid: d849761c9847ee34882a4679934c2c86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 200E_Back_Mat
+    second: {fileID: 2100000, guid: 43afb671663dbef4a94c98afedac745e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 200E_Front_Mat
+    second: {fileID: 2100000, guid: f0d9daeefa4f92c41b5de92c19f81860, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20DBack_Mat
+    second: {fileID: 2100000, guid: 115e822bf5b1e1544b88844368705749, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20DFront_Mat
+    second: {fileID: 2100000, guid: 1e7c898b95b46cf42b6c36cf77e8be08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20E_Back_Mat
+    second: {fileID: 2100000, guid: e4acf010411eb1b4c91d00395f853185, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20E_Front_Mat
+    second: {fileID: 2100000, guid: 405239049688a264684703f1cff1154c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2DBack_Mat
+    second: {fileID: 2100000, guid: 44cf8512da08d84498a7a1281602435f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2DFront_Mat
+    second: {fileID: 2100000, guid: 55fae8f0a532f5349a5ba3ee93517847, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 500E_Back_Mat
+    second: {fileID: 2100000, guid: ea864b14dbf87524dbf9a912e3019083, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 500E_Front_Mat
+    second: {fileID: 2100000, guid: 8f943d17a4da3f54996d8bf80f5af586, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 50DBack_Mat
+    second: {fileID: 2100000, guid: e91d39dee1363a24a99c4eea225e257c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 50DFront_Mat
+    second: {fileID: 2100000, guid: cea96238b44089e4496b4ef0b684bc08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 50E_Back_Mat
+    second: {fileID: 2100000, guid: 48b2fde0fc48ffd4085d8fc89aa0d328, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 50E_Front_Mat
+    second: {fileID: 2100000, guid: 5219fcf7b7ca93248802a5997415e775, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 5DBack_Mat
+    second: {fileID: 2100000, guid: d4c1fcdfd23b6e84c9357a5474e67212, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 5DFront_Mat
+    second: {fileID: 2100000, guid: f0e37263c7ed00a429e3bd9573f723ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 5E_Back_Mat
+    second: {fileID: 2100000, guid: 1d45300250f0b7645aec7630c635b377, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 5E_Front_Mat
+    second: {fileID: 2100000, guid: 3fa2d50b9cfb95f42aca389787e1f6fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BantMat
+    second: {fileID: 2100000, guid: 231976bd4107cc640b75278f717270cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Numbers_Mat
+    second: {fileID: 2100000, guid: 47cf9f58d27aba94291befb324f50bc4, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
