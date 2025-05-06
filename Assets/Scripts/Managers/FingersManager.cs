@@ -27,6 +27,8 @@ public class FingersManager : MonoBehaviour
 
     private int applesInTheScene = 0;
     
+    private List<GameObject> fingerNumbersInTheScene = new(); // always not more than one
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,11 @@ public class FingersManager : MonoBehaviour
         appleSpawningPositions.Add(3, new Vector3(0.0560000017f,0.777999997f,0.536000013f));
         appleSpawningPositions.Add(4, new Vector3(0.228f,0.777999997f,0.236000001f));
         appleSpawningPositions.Add(5, new Vector3(0.532000005f,0.777999997f,0.528999984f));
+        appleSpawningPositions.Add(6, new Vector3(0.532000005f,0.777999997f,0.199000001f));
+        appleSpawningPositions.Add(7, new Vector3(-0.194999993f,0.777999997f,0.572000027f));
+        appleSpawningPositions.Add(8, new Vector3(-0.587000012f,0.777999997f,0.206f));
+        appleSpawningPositions.Add(9, new Vector3(-0.0219999999f,0.777999997f,0.201000005f));
+        appleSpawningPositions.Add(10, new Vector3(0.333999991f,0.777999997f,0.542999983f));
     }
     
     private void SaveInitialData()
@@ -132,8 +139,17 @@ public class FingersManager : MonoBehaviour
     
     public void CreateCopyOfObject(GameObject obj)
     {
+        if(fingerNumbersInTheScene.Count > 0)
+        {
+            foreach (var fingerNumber in fingerNumbersInTheScene)
+            {
+                Destroy(fingerNumber);
+            }
+        }
+        
         //Vector3 initialPosition = obj.transform.position;
         GameObject newObj = Instantiate(obj);
+        fingerNumbersInTheScene.Add(newObj);
         //block the grabbable to avoid the object to be grabbed immediately
         obj.GetComponent<Grabbable>().enabled = false;
         newObj.transform.SetPositionAndRotation(obj.transform.position, obj.transform.rotation);

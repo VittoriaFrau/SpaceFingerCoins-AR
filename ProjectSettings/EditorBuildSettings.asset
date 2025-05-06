@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/AppleFingers.unity
+    guid: 0b15a3201736c6b41ac68958fc2999bc
+  - enabled: 1
+    path: Assets/Scenes/Cartesian.unity
+    guid: 2ed1b95db3dbc9a4b84fcb3e903c7862
+  - enabled: 1
+    path: Assets/Scenes/Money.unity
+    guid: 8d5237e43e5fea44d9b50b906222ec0d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1b86f86aa574f4d63b0b15e1f6187c48, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e2ef84dd4afdb4c06adf0f766fe87b81, type: 2}

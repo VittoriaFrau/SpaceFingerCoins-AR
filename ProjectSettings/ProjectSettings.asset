@@ -142,6 +142,8 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 11400000, guid: dba732fbc44474f6796f29839fe30aa6, type: 2}
+  - {fileID: 11400000, guid: 1b86f86aa574f4d63b0b15e1f6187c48, type: 2}
+  - {fileID: -7176128304050236944, guid: e2ef84dd4afdb4c06adf0f766fe87b81, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -161,7 +163,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.contAR
   buildNumber:
     Standalone: 0
     VisionOS: 0
