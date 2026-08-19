@@ -8,7 +8,7 @@ DOI: [10.1145/3713043.3731515](https://doi.org/10.1145/3713043.3731515)
 ---
 | Finger Counting | Money Handling | Spatial Reasoning |
 |:---:|:---:|:---:|
-| ![Finger Counting](Assets/Resources/Icons/FingersAR2.jpg) | ![Money Handling](Assets/Resources/Icons/MoneyAR.png) | ![Spatial Reasoning](Assets/Resources/Icons/CartesianAR.png) |
+| | <img src="Assets/Resources/Icons/FingersAR2.jpg" width="300"/> | <img src="Assets/Resources/Icons/MoneyAR.png" width="300"/> | <img src="Assets/Resources/Icons/CartesianAR.png" width="300"/> |
 ---
 
 ## Overview
